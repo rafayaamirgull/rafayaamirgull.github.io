@@ -1,5 +1,5 @@
 title: Rafay Aamir Gull
 #logo: /assets/img/rafay.jpg
 #description: text to appear here
-#show_downloads: true
+show_downloads: true
 remote_theme: jekyll-theme-hydra
