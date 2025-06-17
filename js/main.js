@@ -1,20 +1,23 @@
-// Scroll reveal effect (basic version)
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("section");
-  const options = {
-    threshold: 0.1,
-  };
+  // Section reveal on scroll
+  const sections = document.querySelectorAll(".section");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.2 }
+  );
+  sections.forEach((s) => observer.observe(s));
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+  // Smooth scroll
+  document.querySelectorAll("nav a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      document
+        .querySelector(link.getAttribute("href"))
+        .scrollIntoView({ behavior: "smooth" });
     });
-  }, options);
-
-  sections.forEach((section) => {
-    section.classList.add("hidden");
-    observer.observe(section);
   });
 });
