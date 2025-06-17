@@ -1,42 +1,99 @@
-## [Portfolio Website](https://rafayaamirgull.github.io)
-### ***rafayaamirgull.github.io***
-
-<h1 align="center">Hi 👋, I'm Rafay Aamir</h1>
-<h3 align="center">Roboticist and a software engineer</h3>
+# Rafay Aamir Gull [Portfolio](https://rafayaamirgull.github.io/)
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=rafayaamirgull&label=Profile%20views&color=0e75b6&style=flat" alt="rafayaamirgull" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=rafayaamirgull" alt="rafayaamirgull" /></a> </p>
-
 <p align="left"> <a href="https://twitter.com/rafayaamir9" target="blank"><img src="https://img.shields.io/twitter/follow/rafayaamir9?logo=twitter&style=for-the-badge" alt="rafayaamir9" /></a> </p>
+
+## About
+
+This portfolio showcases the academic, research, and professional journey of **Rafay Aamir Gull**, a Computer Vision and Robotics Engineer passionate about 3D perception, deep reinforcement learning, and humanoid robots.
+
+## AGI --- EIR Coming Soon LOADING...
 
 ![](https://github.com/rafayaamirgull/rafayaamirgull/blob/output/github-contribution-grid-snake.svg)
 
-<!---
-rafayaamirgull/rafayaamirgull is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+## Areas of interest:
 
+- Real-time robotic perception and planning
+- Deep learning for 3D human modeling
+- Humanoid robotics
+- AI for automation and simulation
 
-- 🔭 I’m currently working on **3D Computer Vision, SFM, 3D Reconstruction, 3D Object Detection**
-- 👯 I’m looking to collaborate on **Deep RL and Vision-based robotics**
-- 👀 I’m interested in 3D Computer Vision, Humanoids, Neuroscience, and Robot Perception
-- 📫 How to reach me **rafay.aamir.gull@gmail.com**, [GitHub](https://github.com/rafayaamirgull), and [LinkedIn](https://www.linkedin.com/in/rafay-aamir-2825281b9)
+---
 
-- 📄 Know about my experiences [https://drive.google.com/file/d/1w_VvmoxseRvsEPliJol2JUDOdEAj5Cxx/view?usp=sharing](https://drive.google.com/file/d/1w_VvmoxseRvsEPliJol2JUDOdEAj5Cxx/view?usp=sharing)
+## Features
 
-<h3 align="left">Connect with me:</h3>
+- Responsive design (desktop + mobile)
+- Section-based navigation with smooth scrolling
+- Animated section reveals
+- Downloadable CV & contact section
+- GitHub-hosted static website (no backend required)
+
+---
+
+## Technologies Used
+
+| Languages     | Frameworks              | Tools                        |
+| ------------- | ----------------------- | ---------------------------- |
+| HTML, CSS, JS | PyTorch, ROS2, IsaacSim | GitHub Pages, Docker, Jetson |
+| C++, CUDA     | OpenCV, FastAPI         | Git, GitHub Actions          |
+
+## Education
+
+- **ERASMUS+ Masters** in Robotic Systems – University of Girona, Spain
+- **MSc in Computer Vision** – Université de Bourgogne, France
+- **BSc in Electrical Engineering** – ITU Lahore, Pakistan
+
+## Projects Highlight
+
+- **Mimic Me Bot** — Human-to-robot mimicry with UR5 + inverse kinematics
+- **SMPL Human Measurement Estimation** — From RGB image to anthropometric data
+- **3D Scene Understanding** — RetinaNet + ResNet50 + 25 FPS object detection
+- **Dog Robot Tracker** — LiDAR + RGB-D based human-following Unitree Go1
+
+## Contact
+
+<p align="left">
+  <a href="mailto:rafay.aamir.gull@gmail.com"><img src="https://img.shields.io/badge/email-rafay.aamir.gull@gmail.com-red?style=for-the-badge&logo=gmail"></a>
+  <a href="https://github.com/rafayaamirgull"><img src="https://img.shields.io/badge/GitHub-rafayaamirgull-181717?style=for-the-badge&logo=github"></a>
+  <a href="https://www.linkedin.com/in/rafay-aamir-2825281b9"><img src="https://img.shields.io/badge/LinkedIn-RafayAamir-blue?style=for-the-badge&logo=linkedin"></a>
+  <a href="https://twitter.com/rafayaamir9"><img src="https://img.shields.io/twitter/follow/rafayaamir9?label=Follow&style=for-the-badge&logo=twitter&color=1DA1F2"></a>
+</p>
+
 <p align="left">
 <a href="https://twitter.com/rafayaamir9" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="rafayaamir9" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/rafay-aamir-2825281b9" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="rafay-aamir-2825281b9" height="30" width="40" /></a>
 <a href="https://www.youtube.com/c/rafayaamir5125" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/youtube.svg" alt="rafayaamir5125" height="30" width="40" /></a>
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.blender.org/" target="_blank" rel="noreferrer"> <img src="https://download.blender.org/branding/community/blender_community_badge_white.svg" alt="blender" width="40" height="40"/> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a> <a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mathworks.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://redis.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="40" height="40"/> </a> <a href="https://www.rust-lang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" alt="rust" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> <a href="https://unity.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> </a> </p>
+## GitHub Stats
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=rafayaamirgull&show_icons=true&locale=en&layout=compact" alt="rafayaamirgull" /></p>
+<p align="left">
+  <img src="https://komarev.com/ghpvc/?username=rafayaamirgull&label=Profile%20views&color=0e75b6&style=flat" alt="rafayaamirgull" />
+</p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=rafayaamirgull&show_icons=true&locale=en" alt="rafayaamirgull" /></p>
+<p align="left">
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=rafayaamirgull&theme=radical" alt="rafayaamirgull" />
+  </a>
+</p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=rafayaamirgull&" alt="rafayaamirgull" /></p>
+<p align="center">
+  <img src="https://github.com/rafayaamirgull/rafayaamirgull/blob/output/github-contribution-grid-snake.svg" alt="snake animation" />
+</p>
+
+## Toolbox
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ros/ros-original.svg" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/opencv/opencv-original.svg" width="40" />
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" width="40" />
+</p>
+
+## License
+
+This repository is open-source and available under the [MIT License](LICENSE)
