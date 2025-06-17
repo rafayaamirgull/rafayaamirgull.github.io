@@ -3,166 +3,244 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Rafay Aamir Gull" />
-    <title>Rafay Aamir Gull | Robotics & Vision Developer</title>
+    <title>Rafay Aamir Gull | Robotics & Vision Engineer</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script defer src="js/main.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      header,
+      section,
+      footer {
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      header {
+        background: #f4f4f4;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 10px;
+      }
+
+      section ul {
+        padding-left: 20px;
+      }
+
+      @media (max-width: 768px) {
+        header,
+        section,
+        footer {
+          padding: 15px;
+        }
+
+        nav ul li {
+          display: block;
+          margin: 5px 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
-      <nav>
-        <h1>Rafay Aamir Gull</h1>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <section class="hero">
-        <h2>Computer Vision & Robotics Developer</h2>
-        <p>
-          Passionate about humanoid robots, reinforcement learning, and robot
-          perception.
-        </p>
-        <div class="cta">
-          <a href="assets/rafay_aamir_cv.pdf" target="_blank">Download CV</a>
-          <a href="#contact">Get in Touch</a>
-        </div>
-      </section>
+      <h1>Rafay Aamir Gull</h1>
+      <p>Computer Vision & Robotics Software Developer</p>
+      <p>
+        <a href="mailto:rafay.aamir.gull@gmail.com"
+          >rafay.aamir.gull@gmail.com</a
+        >
+        | France | +33 609981802
+      </p>
+      <p>
+        <a href="https://rafayaamirgull.github.io">rafayaamirgull.github.io</a>
+        | <a href="https://github.com/rafayaamirgull">GitHub</a>
+      </p>
     </header>
 
-    <main>
-      <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-          I am a results-driven engineer with experience in computer vision,
-          robotics, and deep learning. From building an obstacle-avoiding robot
-          at 13 to publishing research and deploying robotics applications
-          across continents, I thrive at the intersection of vision and motion.
-        </p>
-        <h3>Technical Skills</h3>
-        <ul class="skills">
-          <li>Python, C++, CUDA</li>
-          <li>OpenCV, PyTorch, ROS2</li>
-          <li>IsaacSim, Omniverse, Colmap</li>
-          <li>Microservices, Docker, gRPC</li>
-        </ul>
-      </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a Computer Vision Software Engineer experienced in scalable
+        microservices using C++, Python, and CUDA. I specialize in stereo 3D
+        reconstruction, structure-from-motion (SFM), robotics simulation, object
+        detection, and deep reinforcement learning. I built my first robot at
+        age 13 and have been deeply engaged in the field ever since.
+      </p>
+      <p>
+        Currently, I am working on a project that predicts human body part
+        measurements—such as arm length, wrist size, and waist—from a single RGB
+        image using SMPL 3D human models. This integrates my interests in
+        computer vision and human-centric AI for applications in robotics,
+        health, and personalization.
+      </p>
+    </section>
 
-      <section id="experience" class="section">
-        <h2>Experience</h2>
-        <div class="card">
-          <h3>Computer Vision Intern – Horizon Telecom (France)</h3>
-          <p>
-            Developed real-time 3D visual perception system for pick-and-place
-            with mobile manipulators using IsaacSim and ROS2.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Computer Vision Engineer – Hazen.ai (Remote)</h3>
-          <ul>
-            <li>
-              Built C++ microservices and CUDA APIs for real-time video
-              analytics on Jetson platforms.
-            </li>
-            <li>
-              Improved object detection and lens correction by over 20% using
-              novel algorithms.
-            </li>
-            <li>Deployed applications in UK, UAE, and Saudi Arabia.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Deep Learning Intern – Scuola Superiore Sant'Anna (Italy)</h3>
-          <p>
-            Designed and trained time-series models deployed on STM32 for edge
-            inference.
-          </p>
-        </div>
-      </section>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <p>
+        <strong>Languages & Frameworks:</strong> Python, C++, CUDA, PyTorch,
+        ROS2, Docker, FastAPI, gRPC, OpenCV, Open3D, Matlab
+      </p>
+      <p>
+        <strong>Tools & Libraries:</strong> IsaacSim, IsaacLab, Omniverse,
+        Colmap, Glomap, EfficientLoFTR, XFeat, Redis, MQTT, SQLite, JSON, SMPL
+      </p>
+      <p>
+        <strong>DevOps:</strong> CI/CD, GitHub, GitLab, Linux, Bash Scripting,
+        Unit Testing (PyTest)
+      </p>
+    </section>
 
-      <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="card">
-          <h3>Dog Robot: Human Follower</h3>
-          <p>
-            Used RealSense + LiDAR on Unitree Go1 robot to follow human in real
-            time.
-          </p>
-        </div>
-        <div class="card">
-          <h3>3D Scene Understanding for Autonomous Robots</h3>
-          <p>
-            Integrated RetinaNet with ResNet50 and FPN for real-time pedestrian
-            recognition (25 FPS).
-          </p>
-        </div>
-        <div class="card">
-          <h3>
-            <a
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <h3>
+        Horizon Telecom (France) – Computer Vision Intern (03/2025–Present)
+      </h3>
+      <ul>
+        <li>
+          Developing real-time 3D visual scene understanding for pick-and-place
+          tasks using IsaacSim and ROS2.
+        </li>
+      </ul>
+
+      <h3>
+        Hazen.ai (Remote) – Computer Vision Software Engineer (03/2023–12/2024)
+      </h3>
+      <ul>
+        <li>
+          Built microservices using C++17/20 and CUDA for real-time analytics on
+          Jetson devices.
+        </li>
+        <li>
+          Achieved 600% speed-up and 42% accuracy improvement using
+          EfficientLoFTR and XFeat.
+        </li>
+        <li>
+          Developed lens correction API (Nvidia-VPI2) with 22% accuracy
+          improvement.
+        </li>
+      </ul>
+
+      <h3>
+        Scuola Superiore Sant’Anna (Italy) – Deep Learning Research Intern
+        (07/2022–02/2023)
+      </h3>
+      <ul>
+        <li>
+          Trained deep learning models for time-series prediction with 97.4%
+          accuracy.
+        </li>
+        <li>
+          Deployed models on STM32 IoT nodes for real-time edge inference.
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p>
+        <strong>University of Girona</strong> – Erasmus+ Mobility Masters in
+        Robotic Systems
+      </p>
+      <p>
+        <strong>Université de Bourgogne Europe</strong> – VIBOT Masters in
+        Computer Vision
+      </p>
+      <p>
+        <strong>Information Technology University (Pakistan)</strong> – B.Sc.
+        Electrical Engineering (Computing Major)
+      </p>
+      <p>
+        <em>Thesis:</em> Vision-Guided Robotic Arm Manipulation with Deep RL
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>Incremental Structure From Motion:</strong> SFM pipeline in
+          Python with OpenCV, Colmap output.
+        </li>
+        <li>
+          <strong>Dense Stereo 3D Reconstruction:</strong> Stereo depth map
+          generation and pointcloud creation.
+        </li>
+        <li>
+          <strong>Dog Robot Follower:</strong> Human-following with RGBD + LiDAR
+          on Unitree Go1 robot.
+        </li>
+        <li>
+          <strong>3D Scene Understanding for Autonomous Vehicles:</strong>
+          RetinaNet + ResNet50 for 3D detection at 25 FPS.
+        </li>
+        <li>
+          <strong
+            ><a
               href="https://github.com/rafayaamirgull/MimicMyArmMotionUniversalRobot"
-              target="_blank"
               >Mimic Me Bot</a
-            >
-          </h3>
-          <p>
-            Controlled UR5 robotic arm to mimic human motion using RGB camera in
-            simulation.
-          </p>
-        </div>
-      </section>
-
-      <section id="publications" class="section">
-        <h2>Publications</h2>
-        <p>
-          <a
-            href="https://ieeexplore.ieee.org/abstract/document/10125209"
-            target="_blank"
-            >1 Robotics Primer for Independent Learners (2023)</a
+            >:</strong
           >
-        </p>
-      </section>
+          Human-arm mimicry using UR5 robot and RGB camera in simulation.
+        </li>
+        <li>
+          <strong>SMPL-based Human Measurement Estimation:</strong> Predicting
+          human body part dimensions from a single RGB image using SMPL 3D
+          models and deep learning pipelines.
+        </li>
+      </ul>
+    </section>
 
-      <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="card">
-          <h3>
-            VIBOT Masters in Computer Vision – Université de Bourgogne (France)
-          </h3>
-          <p>
-            Focus: Visual Perception, Autonomous Robotics, Probabilistic
-            Robotics
-          </p>
-        </div>
-        <div class="card">
-          <h3>B.Sc. Electrical Engineering – ITU Lahore (Pakistan)</h3>
-          <p>Thesis: Vision-Guided Robotic Arm Manipulation with Deep RL</p>
-        </div>
-      </section>
+    <section id="publications">
+      <h2>Publications</h2>
+      <p>
+        <a
+          href="https://ieeexplore.ieee.org/abstract/document/10125209"
+          target="_blank"
+          >1 Robotics Primer for Independent Learners</a
+        >
+        (2023)
+      </p>
+    </section>
 
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>
-          Email:
-          <a href="mailto:rafay.aamir.gull@gmail.com"
-            >rafay.aamir.gull@gmail.com</a
-          >
-        </p>
-        <p>
-          GitHub:
-          <a href="https://github.com/rafayaamirgull" target="_blank"
-            >github.com/rafayaamirgull</a
-          >
-        </p>
-        <p>Location: France</p>
-      </section>
-    </main>
+    <section id="certifications">
+      <h2>Certifications & MOOCs</h2>
+      <ul>
+        <li>
+          Fundamentals of Reinforcement Learning – University of Alberta
+          (Coursera)
+        </li>
+        <li>Robot Perception – University of Pennsylvania (Coursera)</li>
+        <li>Intel OpenVINO Toolkit – Intel (Coursera)</li>
+      </ul>
+    </section>
+
+    <section id="interests">
+      <h2>Hobbies & Interests</h2>
+      <p>
+        Running, swimming, reading about deep reinforcement learning, humanoid
+        robots, 3D vision, SMPL-based human modeling, and space science.
+      </p>
+    </section>
 
     <footer>
-      <p>© 2025 Rafay Aamir Gull. All rights reserved.</p>
+      <p>
+        © 2025 Rafay Aamir Gull | AGI --- EIR (Emotional Intelligent
+        Robots)......LOADING!!!
+      </p>
     </footer>
   </body>
 </html>
