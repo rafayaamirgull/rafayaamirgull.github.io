@@ -78,7 +78,7 @@ This portfolio showcases the academic, research, and professional journey of **R
 </p>
 
 <p align="center">
-  <img src="https://github.com/rafayaamirgull/rafayaamirgull/blob/output/github-contribution-grid-snake.svg" alt="snake animation" />
+  <img src="https://github.com/rafayaamirgull/rafayaamirgull/blob/output/snake.svg" alt="snake animation" />
 </p>
 
 ## Toolbox
