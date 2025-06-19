@@ -43,3 +43,83 @@ footer {
     margin: auto;
   }
 }
+
+.wrapper {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+p,
+li {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  p,
+  li {
+    font-size: 0.95rem;
+  }
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  #nav-links {
+    display: none;
+    flex-direction: column;
+  }
+  #nav-links.show {
+    display: flex;
+  }
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta a {
+  background: #007acc;
+  color: #fff;
+  padding: 12px 24px;
+  margin: 0 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.cta a:hover {
+  background: #005fa3;
+}

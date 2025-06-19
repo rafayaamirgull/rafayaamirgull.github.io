@@ -25,3 +25,14 @@ function toggleNav() {
   const nav = document.getElementById("nav-links");
   nav.classList.toggle("show");
 }
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(
+      (e) => e.isIntersecting && e.target.classList.add("visible")
+    );
+  },
+  { threshold: 0.2 }
+);
+
+document.querySelectorAll(".section").forEach((s) => observer.observe(s));
