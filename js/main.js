@@ -3,6 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleNav() {
     const nav = document.getElementById("nav-links");
     nav.classList.toggle("show");
+
+    // Toggle menu icon
+    const menuIcon = document.querySelector(".menu-toggle i");
+    if (nav.classList.contains("show")) {
+      menuIcon.classList.remove("fa-bars");
+      menuIcon.classList.add("fa-times");
+    } else {
+      menuIcon.classList.remove("fa-times");
+      menuIcon.classList.add("fa-bars");
+    }
   }
 
   // Smooth scroll for navigation links
@@ -18,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const nav = document.getElementById("nav-links");
         nav.classList.remove("show");
 
+        // Reset menu icon
+        const menuIcon = document.querySelector(".menu-toggle i");
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+
         // Smooth scroll to target
         window.scrollTo({
           top: targetElement.offsetTop - 80,
@@ -28,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Section reveal animation
-  const sections = document.querySelectorAll(".section");
+  const sections = document.querySelectorAll(".section, .hero");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -53,4 +68,16 @@ document.addEventListener("DOMContentLoaded", () => {
       header.style.boxShadow = "none";
     }
   });
+
+  // Form submission (prevent default for demo)
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert(
+        "Form submission would be handled here. In a real implementation, this would send the data to a server."
+      );
+      contactForm.reset();
+    });
+  }
 });
