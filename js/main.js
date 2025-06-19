@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("header");
+  const navLinks = document.getElementById("nav-links");
+  const menuToggle = document.getElementById("menu-toggle");
+
   // Mobile menu toggle
   function toggleNav() {
-    const nav = document.getElementById("nav-links");
-    nav.classList.toggle("show");
-
-    // Toggle menu icon
-    const menuIcon = document.querySelector(".menu-toggle i");
-    if (nav.classList.contains("show")) {
+    navLinks.classList.toggle("show");
+    const menuIcon = menuToggle.querySelector("i");
+    if (navLinks.classList.contains("show")) {
       menuIcon.classList.remove("fa-bars");
       menuIcon.classList.add("fa-times");
     } else {
@@ -15,40 +16,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Smooth scroll for navigation links
-  document.querySelectorAll('nav a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+  if (menuToggle) {
+    menuToggle.addEventListener("click", toggleNav);
+  }
 
-      const targetId = this.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        // Close mobile menu if open
-        const nav = document.getElementById("nav-links");
-        nav.classList.remove("show");
-
-        // Reset menu icon
-        const menuIcon = document.querySelector(".menu-toggle i");
-        menuIcon.classList.remove("fa-times");
-        menuIcon.classList.add("fa-bars");
-
-        // Smooth scroll to target
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: "smooth",
-        });
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll("#nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (navLinks.classList.contains("show")) {
+        toggleNav();
       }
     });
   });
 
+  // Sticky header on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
   // Section reveal animation
-  const sections = document.querySelectorAll(".section, .hero");
+  const sections = document.querySelectorAll(".section");
   const observer = new IntersectionObserver(
-    (entries) => {
+    (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -59,23 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   });
 
-  // Sticky header on scroll
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector("nav");
-    if (window.scrollY > 100) {
-      header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
-    } else {
-      header.style.boxShadow = "none";
-    }
-  });
-
   // Form submission (prevent default for demo)
   const contactForm = document.querySelector(".contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
       alert(
-        "Form submission would be handled here. In a real implementation, this would send the data to a server."
+        "Form submission would be handled here. In a real implementation, this would send data to a server."
       );
       contactForm.reset();
     });

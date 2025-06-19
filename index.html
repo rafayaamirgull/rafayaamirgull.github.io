@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Rafay Aamir Gull" />
     <title>Rafay Aamir Gull | Robotics & Vision Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,318 +19,346 @@
     <script defer src="js/main.js"></script>
   </head>
   <body>
-    <!-- Navigation -->
-    <header>
+    <header id="header">
       <nav>
-        <div class="logo">Rafay Aamir Gull</div>
-        <div class="menu-toggle" onclick="toggleNav()">
-          <i class="fas fa-bars"></i>
+        <div class="container">
+          <div class="nav-container">
+            <a href="#" class="logo">Rafay Aamir Gull</a>
+            <div class="menu-toggle" id="menu-toggle">
+              <i class="fas fa-bars"></i>
+            </div>
+            <ul id="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
         </div>
-        <ul id="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="hero-content">
-        <h1>Computer Vision & Robotics Engineer</h1>
-        <p class="subtitle">
-          Focused on 3D perception, deep reinforcement learning, and humanoid
-          robot development.
-        </p>
-        <div class="hero-buttons">
-          <a href="assets/rafay_aamir_cv.pdf" class="btn" target="_blank"
-            >Download CV</a
-          >
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              I am a Computer Vision and Robotics Engineer focused on building
-              intelligent systems for real-time 3D perception and robotic
-              autonomy. With a strong background in microservices, CUDA
-              programming, deep learning, and simulation environments like
-              IsaacSim and Omniverse.
+    <main>
+      <section id="hero" class="hero section">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-intro">Hello, I'm Rafay Aamir Gull.</p>
+            <h1>Computer Vision & Robotics Engineer</h1>
+            <p class="subtitle">
+              Focused on 3D perception, deep reinforcement learning, and
+              humanoid robot development.
             </p>
-            <p>
-              Currently working on estimating human body part measurements from
-              single RGB images using SMPL 3D human models, combining
-              human-centric AI with robotics and computer vision.
-            </p>
-          </div>
-          <div class="about-image">
-            <img src="assets/profile.jpg" alt="Rafay Aamir Gull" />
+            <div class="hero-buttons">
+              <a href="assets/rafay_aamir_cv.pdf" class="btn" target="_blank">
+                Download CV <i class="fas fa-download"></i>
+              </a>
+              <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section bg-light">
-      <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Programming</h3>
-            <ul>
-              <li><i class="fas fa-code"></i> Python</li>
-              <li><i class="fas fa-code"></i> C++</li>
-              <li><i class="fas fa-code"></i> CUDA</li>
-              <li><i class="fas fa-code"></i> Bash</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Frameworks</h3>
-            <ul>
-              <li><i class="fas fa-cubes"></i> PyTorch</li>
-              <li><i class="fas fa-cubes"></i> OpenCV</li>
-              <li><i class="fas fa-cubes"></i> ROS/ROS2</li>
-              <li><i class="fas fa-cubes"></i> FastAPI</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Tools</h3>
-            <ul>
-              <li><i class="fas fa-wrench"></i> Docker</li>
-              <li><i class="fas fa-wrench"></i> Git</li>
-              <li><i class="fas fa-wrench"></i> IsaacSim</li>
-              <li><i class="fas fa-wrench"></i> Open3D</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">Mar 2025 - Present</div>
-            <div class="timeline-content">
-              <h3>Computer Vision Intern</h3>
-              <h4>Horizon Telecom, France</h4>
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <div class="about-image">
+              <img src="assets/profile.jpg" alt="Rafay Aamir Gull" />
+            </div>
+            <div class="about-text">
               <p>
-                Developing robot perception system for real-time 3D scene
-                understanding in pick-and-place tasks using IsaacSim, ROS2, and
-                CenterSnap on Dossan M-series robot.
+                I am a Computer Vision and Robotics Engineer focused on building
+                intelligent systems for real-time 3D perception and robotic
+                autonomy. With a strong background in microservices, CUDA
+                programming, deep learning, and simulation environments like
+                IsaacSim and Omniverse.
+              </p>
+              <p>
+                Currently working on estimating human body part measurements
+                from single RGB images using SMPL 3D human models, combining
+                human-centric AI with robotics and computer vision.
               </p>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Mar 2023 - Dec 2024</div>
-            <div class="timeline-content">
-              <h3>Computer Vision Engineer</h3>
-              <h4>Hazen.ai (Remote)</h4>
+        </div>
+      </section>
+
+      <section id="skills" class="section bg-light">
+        <div class="container">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3><i class="fas fa-code"></i> Programming</h3>
               <ul>
-                <li>
-                  Created C++ microservices and CUDA kernels for real-time video
-                  analytics
-                </li>
-                <li>
-                  Developed GPU-accelerated camera distortion correction (+22%
-                  accuracy)
-                </li>
-                <li>
-                  Implemented stereo vision SFM using EfficientLoFTR and XFeat
-                </li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>CUDA</li>
+                <li>Bash</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3><i class="fas fa-cubes"></i> Frameworks</h3>
+              <ul>
+                <li>PyTorch</li>
+                <li>OpenCV</li>
+                <li>ROS/ROS2</li>
+                <li>FastAPI</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3><i class="fas fa-wrench"></i> Tools</h3>
+              <ul>
+                <li>Docker</li>
+                <li>Git</li>
+                <li>IsaacSim</li>
+                <li>Open3D</li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-light">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/dog-robot.jpg" alt="Dog Robot Project" />
+      <section id="experience" class="section">
+        <div class="container">
+          <h2 class="section-title">Professional Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Mar 2025 - Present</div>
+              <div class="timeline-content">
+                <h3>Computer Vision Intern</h3>
+                <h4>Horizon Telecom, France</h4>
+                <p>
+                  Developing robot perception system for real-time 3D scene
+                  understanding in pick-and-place tasks using IsaacSim, ROS2,
+                  and CenterSnap on Dossan M-series robot.
+                </p>
+              </div>
             </div>
-            <div class="project-info">
-              <h3>Dog Robot to Follow Human</h3>
-              <p>
-                Human-tracking system using RealSense RGBD + LiDAR on Unitree
-                Go1 robot at ImVIA Lab.
-              </p>
-              <a href="#" class="project-link">View Details</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/3d-scene.jpg" alt="3D Scene Understanding" />
-            </div>
-            <div class="project-info">
-              <h3>3D Scene Understanding</h3>
-              <p>
-                Used 3D-RetinaNet with ResNet50 for object detection at 25 FPS
-                with 87% accuracy.
-              </p>
-              <a href="#" class="project-link">View Details</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/mimic-bot.jpg" alt="Mimic Me Bot" />
-            </div>
-            <div class="project-info">
-              <h3>Mimic Me Bot</h3>
-              <p>
-                UR-5 robot mimics human arm motion in real time using RGB input
-                and inverse kinematics.
-              </p>
-              <a
-                href="https://github.com/rafayaamirgull/MimicMyArmMotionUniversalRobot"
-                target="_blank"
-                class="project-link"
-                >View on GitHub</a
-              >
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image">
-              <img src="assets/smpl.jpg" alt="SMPL-based Human Measurement" />
-            </div>
-            <div class="project-info">
-              <h3>SMPL-based Human Measurement</h3>
-              <p>
-                Estimating anthropometric dimensions from single RGB image using
-                SMPL 3D human body models.
-              </p>
-              <a href="#" class="project-link">View Details</a>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Mar 2023 - Dec 2024</div>
+              <div class="timeline-content">
+                <h3>Computer Vision Engineer</h3>
+                <h4>Hazen.ai (Remote)</h4>
+                <ul>
+                  <li>
+                    Created C++ microservices and CUDA kernels for real-time
+                    video analytics
+                  </li>
+                  <li>
+                    Developed GPU-accelerated camera distortion correction (+22%
+                    accuracy)
+                  </li>
+                  <li>
+                    Implemented stereo vision SFM using EfficientLoFTR and XFeat
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="education-grid">
-          <div class="education-card">
-            <div class="edu-icon">
-              <i class="fas fa-graduation-cap"></i>
+      <section id="projects" class="section bg-light">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/dog-robot.jpg" alt="Dog Robot Project" />
+              </div>
+              <div class="project-info">
+                <h3>Dog Robot to Follow Human</h3>
+                <p>
+                  Human-tracking system using RealSense RGBD + LiDAR on Unitree
+                  Go1 robot at ImVIA Lab.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="project-link"
+                    >View Details <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
             </div>
-            <div class="edu-content">
-              <h3>ERASMUS+ Mobility Masters in Robotic Systems</h3>
-              <h4>University of Girona, Spain</h4>
-              <p>
-                Advanced robotic systems, autonomous perception, and control in
-                collaborative environments.
-              </p>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/3d-scene.jpg" alt="3D Scene Understanding" />
+              </div>
+              <div class="project-info">
+                <h3>3D Scene Understanding</h3>
+                <p>
+                  Used 3D-RetinaNet with ResNet50 for object detection at 25 FPS
+                  with 87% accuracy.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="project-link"
+                    >View Details <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="education-card">
-            <div class="edu-icon">
-              <i class="fas fa-graduation-cap"></i>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/mimic-bot.jpg" alt="Mimic Me Bot" />
+              </div>
+              <div class="project-info">
+                <h3>Mimic Me Bot</h3>
+                <p>
+                  UR-5 robot mimics human arm motion in real time using RGB
+                  input and inverse kinematics.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/rafayaamirgull/MimicMyArmMotionUniversalRobot"
+                    target="_blank"
+                    class="project-link"
+                    >View on GitHub <i class="fab fa-github"></i
+                  ></a>
+                </div>
+              </div>
             </div>
-            <div class="edu-content">
-              <h3>Masters in Computer Vision</h3>
-              <h4>VIBOT Erasmus+, Université de Bourgogne, France</h4>
-              <p>
-                Visual perception, robotics, segmentation, and medical imaging.
-              </p>
-            </div>
-          </div>
-          <div class="education-card">
-            <div class="edu-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="edu-content">
-              <h3>B.Sc. in Electrical Engineering</h3>
-              <h4>ITU Lahore, Pakistan</h4>
-              <p>
-                Thesis: Robotic Arm Manipulation using Deep RL and 3D Vision |
-                GPA: 3.49
-              </p>
+            <div class="project-card">
+              <div class="project-image">
+                <img src="assets/smpl.jpg" alt="SMPL-based Human Measurement" />
+              </div>
+              <div class="project-info">
+                <h3>SMPL-based Human Measurement</h3>
+                <p>
+                  Estimating anthropometric dimensions from single RGB image
+                  using SMPL 3D human body models.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="project-link"
+                    >View Details <i class="fas fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-light">
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-container">
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:rafay.aamir.gull@gmail.com"
-                >rafay.aamir.gull@gmail.com</a
-              >
+      <section id="education" class="section">
+        <div class="container">
+          <h2 class="section-title">Education</h2>
+          <div class="education-grid">
+            <div class="education-card">
+              <div class="edu-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="edu-content">
+                <h3>ERASMUS+ Mobility Masters in Robotic Systems</h3>
+                <h4>University of Girona, Spain</h4>
+                <p>
+                  Advanced robotic systems, autonomous perception, and control
+                  in collaborative environments.
+                </p>
+              </div>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>+33 609981802</span>
+            <div class="education-card">
+              <div class="edu-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="edu-content">
+                <h3>Masters in Computer Vision</h3>
+                <h4>VIBOT Erasmus+, Université de Bourgogne, France</h4>
+                <p>
+                  Visual perception, robotics, segmentation, and medical
+                  imaging.
+                </p>
+              </div>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>France</span>
-            </div>
-            <div class="social-links">
-              <a
-                href="https://github.com/rafayaamirgull"
-                target="_blank"
-                title="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://linkedin.com/in/yourprofile"
-                target="_blank"
-                title="LinkedIn"
-              >
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a
-                href="https://twitter.com/yourhandle"
-                target="_blank"
-                title="Twitter"
-              >
-                <i class="fab fa-twitter"></i>
-              </a>
+            <div class="education-card">
+              <div class="edu-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="edu-content">
+                <h3>B.Sc. in Electrical Engineering</h3>
+                <h4>ITU Lahore, Pakistan</h4>
+                <p>
+                  Thesis: Robotic Arm Manipulation using Deep RL and 3D Vision |
+                  GPA: 3.49
+                </p>
+              </div>
             </div>
           </div>
-          <form class="contact-form">
-            <div class="form-group">
-              <input type="text" placeholder="Your Name" required />
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Your Email" required />
-            </div>
-            <div class="form-group">
-              <textarea placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
+      <section id="contact" class="section bg-light">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="contact-container">
+            <div class="contact-info">
+              <p>
+                I'm currently open to new opportunities. Feel free to reach out
+                if you have a project in mind or just want to connect!
+              </p>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:rafay.aamir.gull@gmail.com"
+                  >rafay.aamir.gull@gmail.com</a
+                >
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+33 609981802</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Le Creusot, France</span>
+              </div>
+              <div class="social-links">
+                <a
+                  href="https://github.com/rafayaamirgull"
+                  target="_blank"
+                  title="GitHub"
+                  class="social-icon"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://linkedin.com/in/yourprofile"
+                  target="_blank"
+                  title="LinkedIn"
+                  class="social-icon"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://twitter.com/yourhandle"
+                  target="_blank"
+                  title="Twitter"
+                  class="social-icon"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+            <form class="contact-form">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  placeholder="Your Message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer>
       <div class="container">
         <p>&copy; 2025 Rafay Aamir Gull. All rights reserved.</p>
