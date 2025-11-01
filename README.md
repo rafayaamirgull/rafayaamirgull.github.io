@@ -39,7 +39,7 @@ This portfolio showcases the academic, research, and professional journey of **R
 
 ## Education
 
-- **ERASMUS+ Masters** in Robotic Systems – University of Girona, Spain
+- **Msc Mobile Robotics** – University of Bonn, Germany
 - **MSc in Computer Vision** – Université de Bourgogne, France
 - **BSc in Electrical Engineering** – ITU Lahore, Pakistan
 
