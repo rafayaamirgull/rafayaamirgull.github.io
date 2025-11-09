@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Enhanced section reveal animation with stagger
+  // Enhanced section reveal animation with stagger and smooth transitions
   const sections = document.querySelectorAll(".section");
   const observer = new IntersectionObserver(
     (entries, observer) => {
@@ -94,16 +94,43 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add("visible");
-          }, index * 200);
+          }, index * 150); // Reduced stagger for smoother feel
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.15, rootMargin: "0px 0px -50px 0px" } // Adjusted threshold and margin for earlier trigger
   );
 
   sections.forEach((section) => {
     observer.observe(section);
+  });
+
+  // Smooth scrolling for navigation links with easing and improved performance
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Add smooth transitions to all interactive elements
+  const interactiveElements = document.querySelectorAll(
+    "button, a, .project-card, .skill-category, .timeline-item, .education-card, .social-icon"
+  );
+  interactiveElements.forEach((element) => {
+    element.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
   });
 
   // Form submission (prevent default for demo)
