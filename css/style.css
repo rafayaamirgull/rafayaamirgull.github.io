@@ -660,12 +660,17 @@ footer {
   }
   .education-card {
     flex-direction: column;
+    background: linear-gradient(
+        rgba(245, 245, 245, 0.8),
+        rgba(245, 245, 245, 0.9)
+      ),
+      url("assets/hero-bg.jpg") no-repeat center center/cover;
     align-items: center;
     text-align: center;
   }
-  .edu-icon {
-    margin-bottom: 15px;
-  }
+}
+.edu-icon {
+  margin-bottom: 15px;
 }
 
 .nav-profile-img {
@@ -688,9 +693,9 @@ nav .nav-container {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white-color);
+
   flex-grow: 1;
 }
-
 
 /* --- Sliding Text Animation --- */
 
@@ -705,20 +710,20 @@ nav .nav-container {
 }
 
 .sliding-text {
-  /* This tells the text to stay on a single line */
-  white-space: nowrap; 
-  
-  /* This makes it a block-level element we can animate */
-  display: inline-block; 
-  
-  /* This pushes the text to start completely off-screen to the right */
-  padding-left: 100%; 
-  
+  /* This tells the te xt to stay on a single line */
+  white-space: nowrap;
+
+  /* This makes it a blo ck-level element we can animate */
+  display: inline-block;
+
+  /* This pushes the  text to start completely off-screen to the right */
+  padding-left: 100%;
+
   /* Make it look like the subtitle text */
   color: #cccccc; /* This color is from your .subtitle style */
   font-size: 1.1rem; /* This size is from your .subtitle style */
   font-weight: 400; /* This is from your .subtitle style */
-  
+
   /* Apply the animation */
   animation: slide-left 30s linear infinite;
 }

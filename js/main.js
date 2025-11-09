@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Loading screen
+  const loadingScreen = document.getElementById("loading-screen");
+  setTimeout(() => {
+    loadingScreen.classList.add("hide");
+  }, 2000);
+
   const header = document.getElementById("header");
   const navLinks = document.getElementById("nav-links");
   const menuToggle = document.getElementById("menu-toggle");
+  const themeToggle = document.getElementById("theme-toggle");
 
   // Mobile menu toggle
   function toggleNav() {
@@ -38,13 +45,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Section reveal animation
+  // Theme toggle
+  function toggleTheme() {
+    const body = document.body;
+    const themeIcon = themeToggle.querySelector("i");
+
+    if (body.classList.contains("light-mode")) {
+      body.classList.remove("light-mode");
+      themeIcon.classList.remove("fa-sun");
+      themeIcon.classList.add("fa-moon");
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.add("light-mode");
+      themeIcon.classList.remove("fa-moon");
+      themeIcon.classList.add("fa-sun");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
+  }
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+    const themeIcon = themeToggle.querySelector("i");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  }
+
+  // Parallax effect
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    const hero = document.querySelector(".hero");
+    if (hero) {
+      hero.style.transform = `translateY(${rate}px)`;
+    }
+  });
+
+  // Enhanced section reveal animation with stagger
   const sections = document.querySelectorAll(".section");
   const observer = new IntersectionObserver(
     (entries, observer) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, index * 200);
           observer.unobserve(entry.target);
         }
       });
