@@ -12,6 +12,17 @@
   --header-height: 70px;
 }
 
+body.light-mode {
+  --primary-color: #2c5aa0;
+  --secondary-color: #1e3f73;
+  --bg-color: #f5f5f5;
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary-color: #666666;
+  --border-color: #dddddd;
+  --white-color: #000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -133,6 +144,10 @@ ul {
   height: var(--header-height);
 }
 
+body.light-mode #header {
+  background-color: rgba(245, 245, 245, 0.8);
+}
+
 #header.scrolled {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -202,6 +217,14 @@ nav .nav-container {
     url("assets/hero-bg.jpg") no-repeat center center/cover;
 }
 
+body.light-mode .hero {
+  background: linear-gradient(
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.9)
+    ),
+    url("assets/hero-bg.jpg") no-repeat center center/cover;
+}
+
 .hero-intro {
   color: var(--primary-color);
   font-family: "Poppins", sans-serif;
@@ -265,6 +288,10 @@ nav .nav-container {
   border-radius: 10px;
   border: 1px solid var(--border-color);
   transition: var(--transition);
+}
+
+body.light-mode .skill-category {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .skill-category:hover {
@@ -388,6 +415,10 @@ nav .nav-container {
   flex-direction: column;
 }
 
+body.light-mode .project-card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -460,6 +491,10 @@ nav .nav-container {
   align-items: flex-start;
 }
 
+body.light-mode .education-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .edu-icon {
   color: var(--primary-color);
   font-size: 2.2rem;
@@ -493,6 +528,10 @@ nav .nav-container {
   padding: 50px;
   border-radius: 10px;
   border: 1px solid var(--border-color);
+}
+
+body.light-mode .contact-container {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info p {
@@ -585,6 +624,10 @@ footer {
   border-top: 1px solid var(--border-color);
 }
 
+body.light-mode footer {
+  border-top: 1px solid var(--border-color);
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
   .about-content {
@@ -660,11 +703,6 @@ footer {
   }
   .education-card {
     flex-direction: column;
-    background: linear-gradient(
-        rgba(245, 245, 245, 0.8),
-        rgba(245, 245, 245, 0.9)
-      ),
-      url("assets/hero-bg.jpg") no-repeat center center/cover;
     align-items: center;
     text-align: center;
   }
@@ -695,6 +733,39 @@ nav .nav-container {
   color: var(--white-color);
 
   flex-grow: 1;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: var(--surface-color);
+  color: var(--text-secondary-color);
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transform: translateY(-3px);
+  border-color: var(--primary-color);
+}
+
+body.light-mode .theme-toggle {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+body.light-mode .theme-toggle:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 
 /* --- Sliding Text Animation --- */
