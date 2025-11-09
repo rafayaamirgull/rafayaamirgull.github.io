@@ -145,7 +145,7 @@ ul {
 }
 
 body.light-mode #header {
-  background-color: rgba(245, 245, 245, 0.8);
+  background-color: rgb(255, 255, 255);
 }
 
 #header.scrolled {
@@ -218,10 +218,7 @@ nav .nav-container {
 }
 
 body.light-mode .hero {
-  background: linear-gradient(
-      rgba(245, 245, 245, 0.8),
-      rgba(245, 245, 245, 0.9)
-    ),
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)),
     url("assets/hero-bg.jpg") no-repeat center center/cover;
 }
 
@@ -780,6 +777,10 @@ body.light-mode .theme-toggle:hover {
   padding: 0.5rem 0; /* A little vertical padding */
 }
 
+body.light-mode .sliding-text-container {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .sliding-text {
   /* This tells the te xt to stay on a single line */
   white-space: nowrap;
@@ -791,12 +792,16 @@ body.light-mode .theme-toggle:hover {
   padding-left: 100%;
 
   /* Make it look like the subtitle text */
-  color: #cccccc; /* This color is from your .subtitle style */
+  color: #ffffff; /* This color is from your .subtitle style */
   font-size: 1.1rem; /* This size is from your .subtitle style */
   font-weight: 400; /* This is from your .subtitle style */
 
   /* Apply the animation */
   animation: slide-left 30s linear infinite;
+}
+
+body.light-mode .sliding-text {
+  color: #333333;
 }
 
 /* Define the animation keyframes */
