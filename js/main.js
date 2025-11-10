@@ -150,16 +150,18 @@ document.addEventListener("DOMContentLoaded", () => {
       submitButton.textContent = "Sending...";
 
       try {
-        // Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree form endpoint
         const response = await fetch("https://formspree.io/f/mzzypwdj", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Accept: "application/json",
           },
           body: JSON.stringify(data),
         });
 
-        if (response.ok) {
+        const result = await response.json();
+
+        if (response.ok && result.ok) {
           alert("Thank you for your message! I'll get back to you soon.");
           contactForm.reset();
         } else {
