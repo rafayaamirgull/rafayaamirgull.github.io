@@ -339,9 +339,9 @@ function initThreeScenes() {
     });
   }
 
-  // Skills Scene
+  // Skills Scene with Dynamic Particle Effects
   const skillsCanvas = document.getElementById("skills-canvas");
-  if (skillsCanvas) {
+  if (skillsCanvas && !isMobile) {
     const skillsScene = new THREE.Scene();
     const skillsCamera = new THREE.PerspectiveCamera(
       75,
@@ -352,48 +352,123 @@ function initThreeScenes() {
     const skillsRenderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
+      powerPreference: "high-performance",
     });
     skillsRenderer.setSize(skillsCanvas.clientWidth, skillsCanvas.clientHeight);
+    skillsRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     skillsCanvas.appendChild(skillsRenderer.domElement);
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
     skillsScene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
     directionalLight.position.set(1, 1, 1);
     skillsScene.add(directionalLight);
 
-    // Floating skill icons (represented as 3D shapes)
-    const skillShapes = [];
-    const colors = [0x4a90e2, 0x357ebd, 0x2c5aa0, 0x1e3f73, 0x0d2b50, 0x06325a];
+    // Dynamic Particle System for Skills
+    const skillCategories = [
+      { name: "Programming", count: 7, color: 0x4a90e2 },
+      { name: "Software Dev", count: 10, color: 0x357ebd },
+      { name: "Robotics", count: 6, color: 0x2c5aa0 },
+      { name: "ML/DL", count: 6, color: 0x1e3f73 },
+      { name: "Computer Vision", count: 11, color: 0x0d2b50 },
+      { name: "Data Analytics", count: 7, color: 0x06325a },
+    ];
 
-    for (let i = 0; i < 12; i++) {
-      const geometry = new THREE.IcosahedronGeometry(0.3, 0);
-      const material = new THREE.MeshLambertMaterial({
-        color: colors[i % colors.length],
-      });
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.position.set(
-        (Math.random() - 0.5) * 8,
-        (Math.random() - 0.5) * 4,
-        (Math.random() - 0.5) * 4
-      );
-      skillsScene.add(mesh);
-      skillShapes.push(mesh);
-    }
+    const skillParticles = [];
+    const particleGroups = [];
 
-    skillsCamera.position.z = 5;
+    skillCategories.forEach((category, categoryIndex) => {
+      const group = new THREE.Group();
+      const particles = [];
+
+      for (let i = 0; i < category.count * 10; i++) {
+        const geometry = new THREE.SphereGeometry(
+          0.02 + Math.random() * 0.03,
+          8,
+          8
+        );
+        const material = new THREE.MeshPhongMaterial({
+          color: category.color,
+          transparent: true,
+          opacity: 0.8,
+        });
+        const particle = new THREE.Mesh(geometry, material);
+
+        // Position particles in clusters
+        const angle = (i / (category.count * 10)) * Math.PI * 2;
+        const radius = 1 + Math.random() * 0.5;
+        const height = (Math.random() - 0.5) * 2;
+
+        particle.position.set(
+          Math.cos(angle) * radius + (categoryIndex - 2.5) * 1.5,
+          height,
+          Math.sin(angle) * radius
+        );
+
+        particle.userData = {
+          originalY: particle.position.y,
+          speed: 0.005 + Math.random() * 0.01,
+          amplitude: 0.1 + Math.random() * 0.2,
+        };
+
+        group.add(particle);
+        particles.push(particle);
+      }
+
+      skillsScene.add(group);
+      particleGroups.push(group);
+      skillParticles.push(...particles);
+    });
+
+    skillsCamera.position.set(0, 0, 6);
+
+    // Mouse interaction for skills
+    let mouseX_skills = 0,
+      mouseY_skills = 0;
+    skillsCanvas.addEventListener("mousemove", (event) => {
+      const rect = skillsCanvas.getBoundingClientRect();
+      mouseX_skills = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      mouseY_skills = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    });
 
     // Animation loop for skills
     function animateSkills() {
       requestAnimationFrame(animateSkills);
       if (!prefersReducedMotion) {
-        skillShapes.forEach((shape, index) => {
-          shape.rotation.x += 0.005 * (index % 2 === 0 ? 1 : -1);
-          shape.rotation.y += 0.005 * (index % 3 === 0 ? 1 : -1);
-          shape.position.y +=
-            Math.sin(Date.now() * 0.001 + index * 0.5) * 0.002;
+        skillParticles.forEach((particle, index) => {
+          // Floating animation
+          particle.position.y =
+            particle.userData.originalY +
+            Math.sin(Date.now() * particle.userData.speed + index) *
+              particle.userData.amplitude;
+
+          // Rotation
+          particle.rotation.x += 0.01;
+          particle.rotation.y += 0.005;
+
+          // Mouse interaction - particles move away from mouse
+          const distance = particle.position.distanceTo(
+            new THREE.Vector3(mouseX_skills * 3, mouseY_skills * 2, 0)
+          );
+          if (distance < 2) {
+            const force = (2 - distance) * 0.02;
+            particle.position.x +=
+              (particle.position.x - mouseX_skills * 3) * force;
+            particle.position.y +=
+              (particle.position.y - mouseY_skills * 2) * force;
+          }
         });
+
+        // Rotate particle groups slowly
+        particleGroups.forEach((group, index) => {
+          group.rotation.y += 0.002 * (index % 2 === 0 ? 1 : -1);
+        });
+
+        // Camera subtle movement
+        skillsCamera.position.x +=
+          (mouseX_skills * 0.5 - skillsCamera.position.x) * 0.02;
+        skillsCamera.lookAt(skillsScene.position);
       }
       skillsRenderer.render(skillsScene, skillsCamera);
     }
