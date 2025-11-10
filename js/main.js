@@ -179,8 +179,8 @@ function initThreeScenes() {
 
     // Neural Network Nodes (Neurons)
     const nodes = [];
-    const nodeCount = 25;
-    const connectionDistance = 8;
+    const nodeCount = 100;
+    const connectionDistance = 10;
     const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
 
     for (let i = 0; i < nodeCount; i++) {
