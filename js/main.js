@@ -133,50 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     element.style.transition = "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
   });
 
-  // Form submission using Formspree
-  const contactForm = document.querySelector(".contact-form");
-  const submitButton = contactForm.querySelector('button[type="submit"]');
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      // Get form data
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
-
-      // Disable button and show loading
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-
-      try {
-        const response = await fetch("https://formspree.io/f/mzzypwdj", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(data),
-        });
-
-        const result = await response.json();
-
-        if (response.ok && result.ok) {
-          alert("Thank you for your message! I'll get back to you soon.");
-          contactForm.reset();
-        } else {
-          throw new Error("Form submission failed");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        alert(
-          "Sorry, there was an error sending your message. Please try again later or contact me directly at rafay.aamir.gull@gmail.com"
-        );
-      } finally {
-        // Re-enable button
-        submitButton.disabled = false;
-        submitButton.textContent = "Send Message";
-      }
-    });
-  }
+  // Form submission using Formspree (now handled by HTML form action, but keeping JS for custom handling if needed)
+  // The form now uses the action attribute for submission, but we can keep this for potential enhancements
 });
