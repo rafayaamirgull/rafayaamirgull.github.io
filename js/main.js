@@ -153,7 +153,7 @@ function initThreeScenes() {
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  // Hero Scene
+  // Hero Scene - Neural Network Visualization
   const heroCanvas = document.getElementById("hero-canvas");
   if (heroCanvas) {
     const heroScene = new THREE.Scene();
@@ -171,72 +171,162 @@ function initThreeScenes() {
     heroCanvas.appendChild(heroRenderer.domElement);
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
     heroScene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
     directionalLight.position.set(1, 1, 1);
     heroScene.add(directionalLight);
 
-    // Floating geometric shapes
-    const geometries = [
-      new THREE.BoxGeometry(1, 1, 1),
-      new THREE.SphereGeometry(0.5, 32, 32),
-      new THREE.CylinderGeometry(0.5, 0.5, 1, 32),
-      new THREE.TetrahedronGeometry(0.8),
-      new THREE.OctahedronGeometry(0.7),
-    ];
+    // Neural Network Nodes (Neurons)
+    const nodes = [];
+    const nodeCount = 25;
+    const connectionDistance = 8;
+    const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
 
-    const materials = [
-      new THREE.MeshLambertMaterial({ color: 0x4a90e2 }),
-      new THREE.MeshLambertMaterial({ color: 0x357ebd }),
-      new THREE.MeshLambertMaterial({ color: 0x2c5aa0 }),
-      new THREE.MeshLambertMaterial({ color: 0x1e3f73 }),
-      new THREE.MeshLambertMaterial({ color: 0x0d2b50 }),
-    ];
-
-    const cubes = [];
-    for (let i = 0; i < 15; i++) {
-      const geometry =
-        geometries[Math.floor(Math.random() * geometries.length)];
-      const material = materials[Math.floor(Math.random() * materials.length)];
-      const mesh = new THREE.Mesh(geometry, material);
-      mesh.position.set(
+    for (let i = 0; i < nodeCount; i++) {
+      const nodeMaterial = new THREE.MeshPhongMaterial({
+        color: 0x4a90e2,
+        emissive: 0x1e3f73,
+        emissiveIntensity: 0.1,
+        transparent: true,
+        opacity: 0.8,
+      });
+      const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+      node.position.set(
         (Math.random() - 0.5) * 20,
-        (Math.random() - 0.5) * 20,
-        (Math.random() - 0.5) * 20
+        (Math.random() - 0.5) * 15,
+        (Math.random() - 0.5) * 10
       );
-      mesh.rotation.set(
-        Math.random() * Math.PI,
-        Math.random() * Math.PI,
-        Math.random() * Math.PI
-      );
-      heroScene.add(mesh);
-      cubes.push(mesh);
+      node.userData = {
+        originalPosition: node.position.clone(),
+        velocity: new THREE.Vector3(
+          (Math.random() - 0.5) * 0.02,
+          (Math.random() - 0.5) * 0.02,
+          (Math.random() - 0.5) * 0.02
+        ),
+        phase: Math.random() * Math.PI * 2,
+      };
+      heroScene.add(node);
+      nodes.push(node);
     }
 
-    heroCamera.position.z = 10;
+    // Connections (Synapses)
+    const connections = [];
+    const lineMaterial = new THREE.LineBasicMaterial({
+      color: 0x357ebd,
+      transparent: true,
+      opacity: 0.3,
+    });
+
+    function updateConnections() {
+      // Remove existing connections
+      connections.forEach((conn) => heroScene.remove(conn));
+      connections.length = 0;
+
+      // Create new connections based on distance
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const distance = nodes[i].position.distanceTo(nodes[j].position);
+          if (distance < connectionDistance) {
+            const geometry = new THREE.BufferGeometry().setFromPoints([
+              nodes[i].position,
+              nodes[j].position,
+            ]);
+            const line = new THREE.Line(geometry, lineMaterial.clone());
+            line.userData = { node1: nodes[i], node2: nodes[j] };
+            heroScene.add(line);
+            connections.push(line);
+          }
+        }
+      }
+    }
+
+    updateConnections();
+
+    heroCamera.position.z = 12;
 
     // Mouse interaction
     let mouseX = 0,
-      mouseY = 0;
+      mouseY = 0,
+      mouseZ = 0;
+    let mouseWorldPos = new THREE.Vector3();
     document.addEventListener("mousemove", (event) => {
       mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+      mouseZ = 0.5; // Depth for 3D interaction
+
+      // Convert screen coordinates to world coordinates
+      mouseWorldPos.set(mouseX, mouseY, mouseZ);
+      mouseWorldPos.unproject(heroCamera);
+      mouseWorldPos.sub(heroCamera.position).normalize();
+      mouseWorldPos.multiplyScalar(10);
+      mouseWorldPos.add(heroCamera.position);
     });
 
-    // Animation loop for hero
+    // Animation loop for hero neural network
     function animateHero() {
       requestAnimationFrame(animateHero);
       if (!prefersReducedMotion) {
-        cubes.forEach((cube, index) => {
-          cube.rotation.x += 0.01 * (index + 1) * 0.1;
-          cube.rotation.y += 0.01 * (index + 1) * 0.1;
-          cube.position.x += Math.sin(Date.now() * 0.001 + index) * 0.005;
-          cube.position.y += Math.cos(Date.now() * 0.001 + index) * 0.005;
+        const time = Date.now() * 0.001;
+
+        nodes.forEach((node, index) => {
+          // Floating movement
+          node.position.x +=
+            Math.sin(time + node.userData.phase) * 0.005 +
+            node.userData.velocity.x;
+          node.position.y +=
+            Math.cos(time * 0.7 + node.userData.phase) * 0.005 +
+            node.userData.velocity.y;
+          node.position.z +=
+            Math.sin(time * 0.5 + node.userData.phase) * 0.003 +
+            node.userData.velocity.z;
+
+          // Mouse interaction - attract/repel nodes
+          const distanceToMouse = node.position.distanceTo(mouseWorldPos);
+          if (distanceToMouse < 5) {
+            const force = new THREE.Vector3()
+              .subVectors(mouseWorldPos, node.position)
+              .normalize()
+              .multiplyScalar(0.02 / (distanceToMouse + 1));
+            node.position.add(force);
+          }
+
+          // Keep nodes within bounds
+          if (Math.abs(node.position.x) > 12) node.userData.velocity.x *= -1;
+          if (Math.abs(node.position.y) > 10) node.userData.velocity.y *= -1;
+          if (Math.abs(node.position.z) > 8) node.userData.velocity.z *= -1;
+
+          // Subtle pulsing glow
+          node.material.emissiveIntensity =
+            0.1 + Math.sin(time * 2 + index) * 0.05;
         });
 
-        heroCamera.position.x += (mouseX * 2 - heroCamera.position.x) * 0.05;
-        heroCamera.position.y += (mouseY * 2 - heroCamera.position.y) * 0.05;
+        // Update connections
+        connections.forEach((connection) => {
+          const geometry = connection.geometry;
+          const positions = geometry.attributes.position.array;
+          positions[0] = connection.userData.node1.position.x;
+          positions[1] = connection.userData.node1.position.y;
+          positions[2] = connection.userData.node1.position.z;
+          positions[3] = connection.userData.node2.position.x;
+          positions[4] = connection.userData.node2.position.y;
+          positions[5] = connection.userData.node2.position.z;
+          geometry.attributes.position.needsUpdate = true;
+
+          // Highlight connections near mouse
+          const midPoint = new THREE.Vector3()
+            .addVectors(
+              connection.userData.node1.position,
+              connection.userData.node2.position
+            )
+            .multiplyScalar(0.5);
+          const distanceToMouse = midPoint.distanceTo(mouseWorldPos);
+          connection.material.opacity = distanceToMouse < 3 ? 0.8 : 0.3;
+        });
+
+        // Gentle camera movement
+        heroCamera.position.x += (mouseX * 1 - heroCamera.position.x) * 0.02;
+        heroCamera.position.y += (mouseY * 1 - heroCamera.position.y) * 0.02;
         heroCamera.lookAt(heroScene.position);
       }
 
