@@ -179,8 +179,8 @@ function initThreeScenes() {
 
     // Neural Network Nodes (Neurons)
     const nodes = [];
-    const nodeCount = 100;
-    const connectionDistance = 10;
+    const nodeCount = 150;
+    const connectionDistance = 5;
     const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
 
     for (let i = 0; i < nodeCount; i++) {
@@ -252,6 +252,10 @@ function initThreeScenes() {
       mouseY = 0,
       mouseZ = 0;
     let mouseWorldPos = new THREE.Vector3();
+    let hoveredNode = null;
+    let raycaster = new THREE.Raycaster();
+    let mouse = new THREE.Vector2();
+
     document.addEventListener("mousemove", (event) => {
       mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -263,6 +267,30 @@ function initThreeScenes() {
       mouseWorldPos.sub(heroCamera.position).normalize();
       mouseWorldPos.multiplyScalar(10);
       mouseWorldPos.add(heroCamera.position);
+
+      // Update mouse position for raycasting
+      mouse.x = mouseX;
+      mouse.y = mouseY;
+
+      // Raycast to detect hovered node
+      raycaster.setFromCamera(mouse, heroCamera);
+      const intersects = raycaster.intersectObjects(nodes);
+
+      // Reset previous hovered node
+      if (hoveredNode) {
+        hoveredNode.material.emissive.setHex(0xb8860b);
+        hoveredNode.material.emissiveIntensity = 0.3;
+        hoveredNode.scale.setScalar(1);
+        hoveredNode = null;
+      }
+
+      // Set new hovered node
+      if (intersects.length > 0) {
+        hoveredNode = intersects[0].object;
+        hoveredNode.material.emissive.setHex(0xffd700);
+        hoveredNode.material.emissiveIntensity = 0.8;
+        hoveredNode.scale.setScalar(1.5);
+      }
     });
 
     // Animation loop for hero neural network
@@ -283,14 +311,20 @@ function initThreeScenes() {
             Math.sin(time * 0.5 + node.userData.phase) * 0.003 +
             node.userData.velocity.z;
 
-          // Mouse interaction - attract/repel nodes
-          const distanceToMouse = node.position.distanceTo(mouseWorldPos);
-          if (distanceToMouse < 5) {
-            const force = new THREE.Vector3()
-              .subVectors(mouseWorldPos, node.position)
-              .normalize()
-              .multiplyScalar(0.02 / (distanceToMouse + 1));
-            node.position.add(force);
+          // Mouse interaction - attract/repel nodes (only if not hovered)
+          if (node !== hoveredNode) {
+            const distanceToMouse = node.position.distanceTo(mouseWorldPos);
+            if (distanceToMouse < 5) {
+              const force = new THREE.Vector3()
+                .subVectors(mouseWorldPos, node.position)
+                .normalize()
+                .multiplyScalar(0.02 / (distanceToMouse + 1));
+              node.position.add(force);
+            }
+          } else {
+            // Hovered node follows mouse cursor
+            const followSpeed = 0.05;
+            node.position.lerp(mouseWorldPos, followSpeed);
           }
 
           // Keep nodes within bounds
@@ -298,9 +332,13 @@ function initThreeScenes() {
           if (Math.abs(node.position.y) > 10) node.userData.velocity.y *= -1;
           if (Math.abs(node.position.z) > 8) node.userData.velocity.z *= -1;
 
-          // Subtle pulsing glow
-          node.material.emissiveIntensity =
-            0.1 + Math.sin(time * 2 + index) * 0.05;
+          // Subtle pulsing glow (override for hovered node)
+          if (node === hoveredNode) {
+            node.material.emissiveIntensity = 0.8 + Math.sin(time * 4) * 0.2;
+          } else {
+            node.material.emissiveIntensity =
+              0.1 + Math.sin(time * 2 + index) * 0.05;
+          }
         });
 
         // Update connections
