@@ -184,12 +184,14 @@ function initThreeScenes() {
     const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
 
     for (let i = 0; i < nodeCount; i++) {
-      const nodeMaterial = new THREE.MeshPhongMaterial({
-        color: 0x4a90e2,
-        emissive: 0x1e3f73,
-        emissiveIntensity: 0.1,
+      const nodeMaterial = new THREE.MeshStandardMaterial({
+        color: 0xffd700,
+        metalness: 0.3,
+        roughness: 0.1,
+        emissive: 0xb8860b,
+        emissiveIntensity: 0.3,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.9,
       });
       const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
       node.position.set(
