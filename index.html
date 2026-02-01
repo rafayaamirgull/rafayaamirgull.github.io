@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Rafay Aamir Gull" />
     <title>
-      Rafay Aamir Gull | Robotics & Computer Vision Developer/Researcher
+      Rafay Aamir Gull | Computer Vision & Robotics Software Engineer
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link
@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
     <script defer src="js/main.js"></script>
   </head>
   <body>
@@ -40,11 +41,22 @@
               class="nav-profile-img"
             />
             <a href="#hero" class="logo">Rafay Aamir Gull</a>
-            <div class="menu-toggle" id="menu-toggle">
+            <button
+              class="menu-toggle"
+              id="menu-toggle"
+              type="button"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+            >
               <i class="fas fa-bars"></i>
-            </div>
+            </button>
             <!-- Dark/Light Mode Toggle -->
-            <button id="theme-toggle" class="theme-toggle">
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              type="button"
+              aria-label="Toggle color theme"
+            >
               <i class="fas fa-moon"></i>
             </button>
             <ul id="nav-links">
@@ -77,10 +89,11 @@
         </div>
         <div class="container">
           <div class="hero-content">
-            <h1>Computer Vision & Robotics Engineer</h1>
+            <h1>Computer Vision & Robotics Software Engineer</h1>
             <p class="subtitle">
-              Focused on 3D perception, deep reinforcement learning, and
-              humanoid robot development.
+              HiWi Student Research Assistant at the Humanoid Robots Lab,
+              University of Bonn. Focused on active perception, intelligent
+              robot manipulation, and embodied AI.
             </p>
             <div class="sliding-text-container">
               <span class="sliding-text">
@@ -96,6 +109,7 @@
                 href="https://drive.google.com/file/d/1cLS67gHGmUdp0Lfpm_NSC2pRdfc0hqgi/view?usp=sharing"
                 class="btn"
                 target="_blank"
+                rel="noopener"
               >
                 Download CV <i class="fas fa-download"></i>
               </a>
@@ -120,32 +134,23 @@
             </div>
             <div class="about-text">
               <p>
-                Computer Vision and Robotics Software Engineer | Deep
-                Reinforcement Learning | Socially Intelligent Humanoid
-                Enthusiast. I am a results-oriented, passionate, and dedicated
-                Software Engineer with expertise in C++, CUDA, and Python,
-                specializing in computer vision and robotics. My experience
-                spans a wide range of cutting-edge technologies, including
-                robotic manipulation, perception, camera calibration, structure
-                from motion, 3D Reconstruction, point clouds, and object
-                detection and tracking.
+                Results-driven Computer Vision Software Engineer with 2+ years
+                of experience in robotics and real-time video analytics. I
+                currently serve as a HiWi Student Research Assistant at the
+                Humanoid Robots Lab (University of Bonn), focusing on active
+                perception and intelligent robot manipulation.
               </p>
               <p>
-                Throughout my career, I have worked on designing and
-                implementing high-performance software solutions that enable
-                machines to perceive, interpret, and interact with their
-                environment. My deep understanding of computer vision algorithms
-                and my proficiency with GPU-based parallel computing (CUDA)
-                allow me to build robust, scalable applications for real-time
-                robotic systems and advanced visual processing tasks.
+                I build production-level C++/Python microservices and deep
+                learning pipelines that improve performance and accuracy. My
+                technical focus spans 3D perception, camera calibration,
+                photogrammetry, point clouds, COLMAP, NeRFs, Gaussian
+                Splatting, and CLIP.
               </p>
               <p>
-                Driven by innovation and problem-solving, I continuously seek
-                new challenges where I can apply my technical expertise to push
-                the boundaries of what’s possible in the fields of robotics and
-                autonomous systems. I am always open to opportunities that allow
-                me to collaborate with like-minded professionals to advance in
-                the areas of AI, machine learning, and computer vision.
+                I enjoy translating research into reliable systems for embodied
+                AI and I am open to collaborations in robot perception, learning,
+                and autonomous systems.
               </p>
             </div>
           </div>
@@ -160,41 +165,37 @@
               <div class="highlight-card">
                 <h3><i class="fas fa-certificate"></i> Certifications</h3>
                 <ul>
-                  <li>Robotics Summer Workshop</li>
-                  <li>Computer Vision Basics</li>
-                  <li>UR-5 Collaborative Robot Workshop</li>
-                  <li>Principles of Engineering</li>
-                  <li>Fundamentals of Reinforcement Learning (Coursera)</li>
-                  <li>Introduction to Intel OpenVino (Coursera)</li>
-                  <li>Robot Perception (Coursera, UPenn)</li>
                   <li>
-                    Neural Networks and Deep Learning (Coursera, Andrew NG)
+                    Fundamentals of Reinforcement Learning (Coursera, University
+                    of Alberta)
+                  </li>
+                  <li>Introduction to Intel OpenVino (Coursera, Intel)</li>
+                  <li>
+                    Robot Perception (Coursera, University of Pennsylvania)
+                  </li>
+                  <li>
+                    Neural Networks and Deep Learning (Coursera, Andrew Ng)
                   </li>
                   <li>Transformer and BERT Model (Coursera, Google)</li>
-                  <li>Computer Vision Basics (Coursera, UB)</li>
+                  <li>Computer Vision Basics (Coursera, University of Buffalo)</li>
                   <li>Master SolidWorks</li>
                 </ul>
               </div>
               <div class="right-column">
                 <div class="highlight-card">
-                  <h3><i class="fas fa-trophy"></i> Honors & Awards</h3>
+                  <h3><i class="fas fa-bullseye"></i> Research Focus</h3>
                   <ul>
-                    <li>ITU Merit Scholarship (Feb 2020 - Present)</li>
-                    <li>Dean's Honor List (Multiple Times)</li>
-                    <li>
-                      3rd Position in Pakistan (Principles of Engineering)
-                    </li>
+                    <li>Active Perception</li>
+                    <li>Intelligent Robot Manipulation</li>
+                    <li>Embodied AI & Robot Learning</li>
                   </ul>
                 </div>
                 <div class="highlight-card">
-                  <h3><i class="fas fa-star"></i> Top Skills</h3>
+                  <h3><i class="fas fa-language"></i> Language Skills</h3>
                   <ul>
-                    <li>Image Segmentation</li>
-                    <li>Camera Calibration</li>
-                    <li>Trajectory Optimization</li>
-                    <li>3D Reconstruction</li>
-                    <li>Structure From Motion</li>
-                    <li>CUDA Programming</li>
+                    <li>English (C1)</li>
+                    <li>French (B1)</li>
+                    <li>German (A1)</li>
                   </ul>
                 </div>
               </div>
@@ -209,6 +210,7 @@
                     <a
                       href="https://ieeexplore.ieee.org/document/10125209"
                       target="_blank"
+                      rel="noopener"
                       class="btn btn-small"
                       >PDF</a
                     >
@@ -223,6 +225,7 @@
       <section id="skills" class="section">
         <div class="container">
           <h2 class="section-title">Technical Skills</h2>
+          <div id="skills-canvas" class="skills-canvas"></div>
           <div class="skills-grid">
             <div class="skill-category">
               <h3><i class="fas fa-eye"></i> Computer Vision</h3>
@@ -230,10 +233,12 @@
                 <li>OpenCV & Open3D</li>
                 <li>Object Detection & Tracking</li>
                 <li>Visual Perception</li>
-                <li>Depth Estimation</li>
-                <li>3D Reconstruction</li>
+                <li>Monocular Depth Estimation</li>
+                <li>Point Clouds & COLMAP</li>
                 <li>Camera Calibration</li>
-                <li>Novel View Synthesis</li>
+                <li>Photogrammetry & 3D Reconstruction</li>
+                <li>NeRFs & Gaussian Splatting</li>
+                <li>CLIP</li>
               </ul>
             </div>
             <div class="skill-category">
@@ -310,7 +315,6 @@
               <ul>
                 <li>Redis</li>
                 <li>SQLite</li>
-                <li>MongoDB</li>
               </ul>
             </div>
           </div>
@@ -321,6 +325,17 @@
         <div class="container">
           <h2 class="section-title">Professional Experience</h2>
           <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Nov 2025 - Present</div>
+              <div class="timeline-content">
+                <h3>Student Research Assistant (HiWi)</h3>
+                <h4>Humanoid Robots Lab, Universität Bonn, Bonn, Deutschland</h4>
+                <ul>
+                  <li>Active perception and intelligent robot manipulation.</li>
+                </ul>
+              </div>
+            </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
               <div class="timeline-date">Mar 2025 - Jun 2025</div>
@@ -336,9 +351,6 @@
                     Developed a 3D scene understanding perception system for
                     electronics warehousing.
                   </li>
-                  <li>
-                    Achieved accurate PCB localization and pose estimation.
-                  </li>
                 </ul>
               </div>
             </div>
@@ -347,7 +359,7 @@
               <div class="timeline-date">Mar 2023 - Dec 2024</div>
               <div class="timeline-content">
                 <h3>Software Engineer</h3>
-                <h4>Hazen.ai (Remote), Mecca, Saudi Arabia</h4>
+                <h4>HAZEN.AI (Remote), Mecca, Saudi Arabia</h4>
                 <ul>
                   <li>
                     Optimized real-time video analytics by developing CUDA C++
@@ -372,9 +384,6 @@
                     python code quality with 92% test coverage.
                   </li>
                   <li>
-                    Engineered and maintained C++ microservices and REST APIs.
-                  </li>
-                  <li>
                     Accelerated image feature correspondence by 600% and
                     improved vehicle speed prediction accuracy by optimizing
                     GPU-accelerated distortion correction and object
@@ -391,7 +400,7 @@
                 <h3>Deep Learning Research Intern</h3>
                 <h4>
                   BioRobotics Institute (Scuola Superiore Sant’Anna), Pisa,
-                  Italy
+                  Italy (Remote)
                 </h4>
                 <ul>
                   <li>
@@ -409,36 +418,6 @@
                 </ul>
               </div>
             </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">Jun 2022 - Jul 2023</div>
-              <div class="timeline-content">
-                <h3>President</h3>
-                <h4>IET On Campus ITU, Pakistan</h4>
-                <p>
-                  Led and initiated various technical events & workshops for the
-                  IET ITU student branch.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">Aug 2021 - Nov 2021</div>
-              <div class="timeline-content">
-                <h3>Robotics Research Intern</h3>
-                <h4>IHSAN Lab ITU, Lahore, Punjab, Pakistan</h4>
-                <p>Conducted research in robotics and computer vision.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-date">Aug 2021 - Oct 2021</div>
-              <div class="timeline-content">
-                <h3>Summer Research Intern</h3>
-                <h4>NanoTech Lab ITU, Lahore, Punjab, Pakistan</h4>
-                <p>Worked on nanotechnology-related projects.</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -446,7 +425,13 @@
       <section id="projects" class="section">
         <div class="container">
           <h2 class="section-title">Projects</h2>
-          <div id="projects-canvas" class="projects-canvas"></div>
+          <div class="projects-canvas projects-gif">
+            <img
+              src="assets/custom_data.gif"
+              alt="Perception and mapping visualization"
+              loading="lazy"
+            />
+          </div>
           <div class="projects-grid">
             <div class="project-card">
               <div class="project-image">
@@ -455,15 +440,16 @@
               <div class="project-info">
                 <h3>Mimic Me Robot</h3>
                 <p>
-                  Designed an algorithm and code a UR-5 robotic manipulator in a
-                  simulated environment to use an RGB camera and move as the
-                  human arm moves in real-time. OpenCV | Robot teleoperation |
-                  Mediapipe | Webots | robot simulation.
+                  Designed an algorithm and coded a UR-5 robotic manipulator in
+                  a simulated environment to use an RGB camera and mimic human
+                  arm motion in real time. OpenCV | Robot teleoperation |
+                  Mediapipe | Webots | Robot simulation.
                 </p>
                 <div class="project-links">
                   <a
                     href="https://github.com/rafayaamirgull/MimicMyArmMotionUniversalRobot"
                     target="_blank"
+                    rel="noopener"
                     class="project-link"
                     >View on GitHub <i class="fab fa-github"></i
                   ></a>
@@ -480,16 +466,12 @@
               <div class="project-info">
                 <h3>VP Subject Classification</h3>
                 <p>
-                  Developed an unsupervised neural network, a Kohonen
-                  Self-Organizing Map (SOM), for the classification and
-                  identification of human subjects based on marker data.
-                  Developed a system that leverages Spike-Timing-Dependent
-                  Plasticity (STDP) for learning, mimicking the way the human
-                  brain processes information. Explored biologically plausible
-                  neural networks by implementing a Simple Unsupervised Spiking
-                  Neural Network (SNN) to learn patterns and features in
-                  spatiotemporal data. Spiking Neural Networks (SNNs) |
-                  Spike-Timing-Dependent Plasticity (STDP) | Python3 | Numpy.
+                  Developed a Kohonen Self-Organizing Map (SOM) for
+                  classification and identification of human subjects from
+                  marker data, and a biologically plausible SNN using
+                  Spike-Timing-Dependent Plasticity (STDP) to learn
+                  spatiotemporal patterns. Spiking Neural Networks (SNNs) |
+                  STDP | Python | NumPy.
                 </p>
                 <div class="project-links">
                   <a href="#" class="project-link"
@@ -506,18 +488,15 @@
                 />
               </div>
               <div class="project-info">
-                <h3>MLOPs-deployments on Cerebrium serverless platform</h3>
+                <h3>MLOps Deployments on Cerebrium Serverless Platform</h3>
                 <p>
                   Converted a pre-trained PyTorch image classification model to
-                  ONNX format, embedding image pre-processing within the model
-                  for streamlined inference. Developed Python wrappers for ONNX
-                  Runtime to enable seamless inference on user-provided images.
-                  Deployed containerized model on Cerebrium platform, leveraging
-                  auto-scaling for cost-efficient inference. Integrated FastAPI
-                  for RESTful API endpoints, achieving a 1.2s E2E response time
-                  (inference + API latency). Python FastAPI | RESTful API |
-                  PyTorch | ONNX | Docker | Serverless Deployment | MLOps |
-                  Cerebrium.
+                  ONNX with embedded preprocessing, built Python wrappers for
+                  ONNX Runtime, and deployed a containerized service on
+                  Cerebrium with auto-scaling. Integrated FastAPI endpoints and
+                  achieved a 1.2s E2E response time (inference + API latency).
+                  Python | FastAPI | PyTorch | ONNX | Docker | Serverless
+                  Deployment | MLOps | Cerebrium.
                 </p>
                 <div class="project-links">
                   <a href="#" class="project-link"
@@ -533,14 +512,12 @@
               <div class="project-info">
                 <h3>HBP-Measurements</h3>
                 <p>
-                  Engineered a perception system for a watch company to
-                  accurately estimate a customer's wrist measurement and other
-                  body parts. Utilized a Deep Learning model and the SMPL
-                  representation to infer body part dimensions in centimeters
-                  from a single RGB image and height input. Delivered real-time
-                  performance at 1 FPS, ensuring quick and efficient on-the-spot
-                  measurements. OpenCV | SMPL | Human Pose Estimation | 3D
-                  Digital Humans | Tensorflow | Pillow | Numpy | Qt.
+                  Engineered a perception system to estimate wrist and body
+                  measurements using a single RGB image and height input.
+                  Leveraged SMPL and deep learning to infer body dimensions in
+                  centimeters, delivering real-time performance at 1 FPS.
+                  OpenCV | SMPL | Human Pose Estimation | 3D Digital Humans |
+                  TensorFlow | Pillow | NumPy | Qt.
                 </p>
                 <div class="project-links">
                   <a href="#" class="project-link"
@@ -562,16 +539,13 @@
                   Designed and implemented an incremental SfM pipeline from
                   scratch in Python, reconstructing 3D models from unstructured
                   images. Performed camera calibration for mobile phones and
-                  Intel RealSense cameras to enhance dataset accuracy. Extracted
-                  SIFT features and matched correspondences using OpenCV’s
-                  BFMatcher, improving feature alignment. Optimized Bundle
-                  Adjustment using SciPy’s least-squares and PyTorch’s Adam
-                  optimizer, achieving 4x faster convergence in reprojection
-                  error minimization. Enhanced visualization by implementing
-                  point cloud colorization from source image. Exported cameras,
-                  images, and 3D points to COLMAP for rendering and validation.
-                  OpenCV | XFeat | LightGlue | PyTorch | COLMAP | 3D
-                  Reconstruction.
+                  Intel RealSense cameras, extracted SIFT features, and matched
+                  correspondences with OpenCV BFMatcher. Optimized bundle
+                  adjustment with SciPy least-squares and PyTorch Adam,
+                  achieving 4x faster convergence in reprojection error
+                  minimization. Added point cloud colorization and exported
+                  cameras, images, and 3D points to COLMAP for validation.
+                  OpenCV | PyTorch | COLMAP | 3D Reconstruction.
                 </p>
                 <div class="project-links">
                   <a href="#" class="project-link"
@@ -592,12 +566,11 @@
                 <p>
                   Optimized an open-source 3D-RetinaNet model with ResNet50
                   backbone + FPN for real-time 3D scene understanding, achieving
-                  87% detection accuracy on pedestrian recognition. Enhanced
-                  inference speed to 25 FPS (real-time performance) for video
-                  feeds from autonomous robots, enabling seamless integration.
-                  Developed an annotation preprocessing script to streamline
-                  dataset preparation for 3D bounding box training. 3D-RetinaNet
-                  | ResNet50 | Feature Pyramid Network | Real-Time Inference.
+                  87% pedestrian detection accuracy. Enhanced inference speed to
+                  25 FPS for autonomous robot video feeds and built an
+                  annotation preprocessing script to streamline 3D bounding box
+                  training. 3D-RetinaNet | ResNet50 | Feature Pyramid Network |
+                  Real-Time Inference.
                 </p>
                 <div class="project-links">
                   <a href="#" class="project-link"
@@ -619,12 +592,12 @@
                 <i class="fas fa-graduation-cap"></i>
               </div>
               <div class="edu-content">
-                <h3>M.Sc. Mobile Robotics</h3>
-                <h4>University of Bonn, Bonn, Germany</h4>
+                <h3>Master of Science in Mobile Robotics</h3>
+                <h4>University of Bonn, Bonn, Deutschland</h4>
                 <p>
-                  October 2025 - Present. Focusing on autonomous systems,
-                  computer vision, sensing, and machine learning for designing
-                  and controlling intelligent robotic systems.
+                  October 2025 - Present. Focused on autonomous systems,
+                  computer vision, sensing, and machine learning for intelligent
+                  robotic systems.
                 </p>
               </div>
             </div>
@@ -633,12 +606,11 @@
                 <i class="fas fa-graduation-cap"></i>
               </div>
               <div class="edu-content">
-                <h3>M.Sc. Computer Vision (VIBOT M1)</h3>
+                <h3>VIBOT M1 Master of Science in Computer Vision</h3>
                 <h4>Université de Bourgogne Europe, Le Creusot, France</h4>
                 <p>
-                  September 2024 - June 2025. Focused on Robot Perception and 3D
-                  Computer Vision, including visual perception, robotics,
-                  segmentation, and medical imaging.
+                  September 2024 - June 2025. Focused on robot perception and 3D
+                  computer vision.
                 </p>
               </div>
             </div>
@@ -647,23 +619,11 @@
                 <i class="fas fa-graduation-cap"></i>
               </div>
               <div class="edu-content">
-                <h3>B.Sc. Electrical Engineering</h3>
+                <h3>Bachelor of Science in Electrical Engineering</h3>
                 <h4>Information Technology University, Lahore, Pakistan</h4>
                 <p>
                   September 2019 - May 2023. Focused on Computer Engineering.
-                  Thesis: Robotic Arm Manipulation using Deep RL and 3D Vision.
-                  GPA: 3.49.
                 </p>
-              </div>
-            </div>
-            <div class="education-card">
-              <div class="edu-icon">
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-              <div class="edu-content">
-                <h3>International Summer Program</h3>
-                <h4>Osaka University, Japan</h4>
-                <p>2021. Mathematics and Physics.</p>
               </div>
             </div>
           </div>
@@ -676,9 +636,8 @@
           <div class="contact-container">
             <div class="contact-info">
               <p>
-                I'm currently open to new opportunities. Feel free to reach out
-                for collaborations in reearch and development of embodied AI
-                systems.
+                I'm open to research collaborations and engineering roles in
+                robot perception, learning, and embodied AI.
               </p>
               <div class="contact-item">
                 <i class="fas fa-envelope"></i>
@@ -687,17 +646,27 @@
                 >
               </div>
               <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <a
+                  href="https://rafayaamirgull.github.io"
+                  target="_blank"
+                  rel="noopener"
+                  >rafayaamirgull.github.io</a
+                >
+              </div>
+              <div class="contact-item">
                 <i class="fas fa-phone"></i>
-                <span>+49 162 2668024</span>
+                <span>+49 160 8313058</span>
               </div>
               <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Bonn, Germany</span>
+                <span>North Rhine-Westphalia, Deutschland</span>
               </div>
               <div class="social-links">
                 <a
                   href="https://github.com/rafayaamirgull"
                   target="_blank"
+                  rel="noopener"
                   title="GitHub"
                   class="social-icon"
                 >
@@ -706,6 +675,7 @@
                 <a
                   href="https://www.linkedin.com/in/rafay-aamir-2825281b9/"
                   target="_blank"
+                  rel="noopener"
                   title="LinkedIn"
                   class="social-icon"
                 >
@@ -714,6 +684,7 @@
                 <a
                   href="https://twitter.com/rafayaamir10"
                   target="_blank"
+                  rel="noopener"
                   title="Twitter/X"
                   class="social-icon"
                 >
@@ -759,7 +730,7 @@
 
     <footer>
       <div class="container">
-        <p>&copy; 2025 Rafay Aamir Gull. All rights reserved.</p>
+        <p>&copy; 2026 Rafay Aamir Gull. All rights reserved.</p>
       </div>
     </footer>
   </body>
