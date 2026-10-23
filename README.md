@@ -5,7 +5,7 @@
 
 ## About
 
-This portfolio showcases the academic, research, and professional journey of **Rafay Aamir Gull**, a Computer Vision and Robotics Engineer passionate about 3D perception, deep reinforcement learning, and humanoid robots.
+This portfolio showcases the academic, research, and professional journey of **Rafay Aamir Gull**, a robotics and computer vision software engineer and M.Sc. Mobile Robotics student at the University of Bonn. His work spans CUDA-accelerated vision, 3D reconstruction, active perception, and physical robot systems. Visitors can view or download the [full CV](https://drive.google.com/file/d/1k6xEnRAut_hqWkrCiGr2bhuJJXyi10YR/view?usp=sharing) and [one-page CV](https://drive.google.com/file/d/1kqBBb0HJrjrx3_60t7O2BfXOmyDeZcR8/view?usp=sharing) on Google Drive. The repo also contains the [one-page CV LaTeX source](cv/one_page_cv.tex).
 
 ## AGI --- EIR Coming Soon LOADING...
 
@@ -25,7 +25,7 @@ This portfolio showcases the academic, research, and professional journey of **R
 - Responsive design (desktop + mobile)
 - Section-based navigation with smooth scrolling
 - Animated section reveals
-- Downloadable CV & contact section
+- Full and one-page CV downloads & contact section
 - GitHub-hosted static website (no backend required)
 
 ---
@@ -40,14 +40,25 @@ This portfolio showcases the academic, research, and professional journey of **R
 ## Education
 
 - **MSc Mobile Robotics** – University of Bonn, Germany
-- **MSc in Computer Vision** – Université de Bourgogne, France
+- **Master's studies in Computer Vision (VIBOT)** – Université de Bourgogne Europe, France
 - **BSc in Electrical Engineering** – ITU Lahore, Pakistan
+
+## Experience
+
+- **Student Research Assistant, DeepMI at DZNE** – CUDA-accelerated MRI segmentation and dense 3D brain reconstruction (Jun 2026–present)
+- **Student Research Assistant, Humanoid Robots Lab, University of Bonn** – teleoperation vision, privacy masking, and robot safety (Nov 2025–present)
+- **Computer Vision Engineer Intern, Horizon Telecom** – 3D scene understanding and Doosan robot integration (Mar–Jun 2025)
+- **Software Engineer, HAZEN.AI** – Jetson video analytics and distributed services deployed across 9+ sites (Mar 2023–Dec 2024)
+- **Deep Learning Research Intern, BioRobotics Institute** – LSTM inference on STM32 (Jul 2022–Jan 2023)
 
 ## Projects Highlight
 
+- **Active Perception and Viewpoint Recovery** — Eye-in-hand viewpoint recovery on a physical UR5e with ROS 2, FoundationPose, and CuRobo
+- **Incremental 3D Scene Reconstruction** — Monocular SfM with 4x faster bundle-adjustment convergence ([code](https://github.com/rafayaamirgull/IncSFM))
 - **Mimic Me Bot** — Human-to-robot mimicry with UR5 + inverse kinematics
 - **SMPL Human Measurement Estimation** — From RGB image to anthropometric data
 - **3D Scene Understanding** — RetinaNet + ResNet50 + 25 FPS object detection
+- **Containerized Computer Vision Model Deployment** — PyTorch to ONNX, FastAPI, Docker, and Cerebrium ([code](https://github.com/rafayaamirgull/cerebrium_ml_model_deployment))
 - **Dog Robot Tracker** — LiDAR + RGB-D based human-following Unitree Go1
 
 ## Contact

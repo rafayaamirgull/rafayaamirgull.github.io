@@ -798,7 +798,7 @@ body.light-mode .scroll-down-indicator {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 28px;
 }
 
@@ -820,6 +820,37 @@ body.light-mode .scroll-down-indicator {
 .project-image {
   height: 220px;
   overflow: hidden;
+}
+
+.project-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px;
+  color: var(--glow-400);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(51, 209, 255, 0.2), transparent 48%),
+    linear-gradient(135deg, #101b29, #0b0e14);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.project-visual i {
+  font-size: 3.5rem;
+}
+
+.project-visual span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+body.light-mode .project-visual {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(0, 120, 168, 0.15), transparent 48%),
+    linear-gradient(135deg, #eaf4fa, #edf1f8);
 }
 
 .project-image img {
