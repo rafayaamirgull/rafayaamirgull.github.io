@@ -417,6 +417,45 @@ body.light-mode .theme-toggle {
   flex-wrap: wrap;
 }
 
+.hero-buttons .btn {
+  min-height: 54px;
+  padding: 12px 24px;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+}
+
+.hero-buttons .btn:not(.btn-outline) {
+  background: linear-gradient(135deg, #58deff, #3f94ff);
+  color: #08121f;
+}
+
+.hero-buttons .btn-outline {
+  background: #15364a;
+  border-color: #6be7ff;
+  color: #f4fbff;
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.38);
+}
+
+.hero-buttons .btn-outline:hover {
+  background: #21536b;
+  color: #ffffff;
+}
+
+body.light-mode .hero-buttons .btn-outline {
+  background: #e5f5fb;
+  border-color: #0078a8;
+  color: #154462;
+}
+
+body.light-mode .hero-buttons .btn-outline:hover {
+  background: #ccebf7;
+  color: #102f45;
+}
+
 .sliding-text-container {
   width: 100%;
   overflow: hidden;
@@ -1104,7 +1143,10 @@ body.light-mode footer {
   }
   .hero-buttons {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+  .hero-buttons .btn {
+    width: 100%;
   }
   .education-card {
     flex-direction: column;
