@@ -985,6 +985,11 @@ body.light-mode .project-visual {
   color: var(--steel-300);
 }
 
+.booking-link {
+  max-width: 100%;
+  margin-bottom: 28px;
+}
+
 .contact-item {
   display: flex;
   align-items: center;

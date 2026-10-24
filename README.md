@@ -63,6 +63,8 @@ This portfolio showcases the academic, research, and professional journey of **R
 
 ## Contact
 
+[Book a 30-minute meeting](https://calendly.com/rafay-aamir-gull/30min), or get in touch through email and social links below.
+
 <p align="left">
   <a href="mailto:rafay.aamir.gull@gmail.com"><img src="https://img.shields.io/badge/email-rafay.aamir.gull@gmail.com-red?style=for-the-badge&logo=gmail"></a>
   <a href="https://github.com/rafayaamirgull"><img src="https://img.shields.io/badge/GitHub-rafayaamirgull-181717?style=for-the-badge&logo=github"></a>
