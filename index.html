@@ -468,10 +468,28 @@
           </div>
           <div class="projects-grid">
             <div class="project-card">
-              <div class="project-image project-visual"><i class="fas fa-robot" aria-hidden="true"></i><span>ROS 2 · UR5e · CuRobo</span></div>
+              <div class="project-image project-visual"><i class="fas fa-robot" aria-hidden="true"></i><span>PyBullet · ROS 2 · UR5e</span></div>
               <div class="project-info">
-                <h3>Active Perception and Viewpoint Recovery – UR5e</h3>
-                <p>Built a perception-action loop that recovers an eye-in-hand camera viewpoint from a target RGB image. Developed it in PyBullet and deployed it on a physical UR5e with ROS 2 nodes for camera capture and robot commands. Integrated DINOv3/SIFT image matching, DepthAnything depth estimation, FoundationPose 6D object pose estimation, and CuRobo inverse kinematics and collision-free motion planning. In six-object scenes, loop runtimes were 35–50 s in simulation and 62–87 s on hardware, depending on object shape and texture.</p>
+                <h3>FindVP — Find the Viewpoint</h3>
+                <p>
+                  Built an eye-in-hand viewpoint search that starts with a
+                  target RGB image and moves a camera to find a matching view.
+                  In PyBullet and on the Steve UR5e, it captures candidate
+                  images, scores DINOv3 and SIFT matches, and refines the best
+                  viewing region. The real-robot workflow uses ROS 2 and CuRobo
+                  planning, with each move approved by an operator. In one
+                  documented run, it captured 13 images, reached 0.968
+                  similarity, and returned the arm to the best view.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/rafayaamirgull/findvp_simNreal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    >View on GitHub <i class="fab fa-github" aria-hidden="true"></i
+                  ></a>
+                </div>
               </div>
             </div>
             <div class="project-card">

@@ -53,7 +53,7 @@ This portfolio showcases the academic, research, and professional journey of **R
 
 ## Projects Highlight
 
-- **Active Perception and Viewpoint Recovery** — Eye-in-hand viewpoint recovery on a physical UR5e with ROS 2, FoundationPose, and CuRobo
+- **[FindVP — Find the Viewpoint](https://github.com/rafayaamirgull/findvp_simNreal)** — Eye-in-hand viewpoint search in PyBullet and on a physical UR5e, using DINOv3/SIFT matching and CuRobo motion planning
 - **Incremental 3D Scene Reconstruction** — Monocular SfM with 4x faster bundle-adjustment convergence ([code](https://github.com/rafayaamirgull/IncSFM))
 - **Mimic Me Bot** — Human-to-robot mimicry with UR5 + inverse kinematics
 - **SMPL Human Measurement Estimation** — From RGB image to anthropometric data
