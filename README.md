@@ -53,6 +53,7 @@ This portfolio showcases the academic, research, and professional journey of **R
 
 ## Projects Highlight
 
+- **[Efficient Fine-Tuning of Geospatial Foundation Models](https://github.com/rafayaamirgull/Efficient-Adaptation-of-Foundation-Models-for-Environmental-Monitoring-Tasks/tree/master)** — Collaborative LoRA and QLoRA experiments for burn-scar segmentation and EuroSAT classification; rank-16 LoRA achieved 0.88 Dice with 32% less peak GPU memory than full fine-tuning
 - **[FindVP — Find the Viewpoint](https://github.com/rafayaamirgull/findvp_simNreal)** — Eye-in-hand viewpoint search in PyBullet and on a physical UR5e, using DINOv3/SIFT matching and CuRobo motion planning
 - **Incremental 3D Scene Reconstruction** — Monocular SfM with 4x faster bundle-adjustment convergence ([code](https://github.com/rafayaamirgull/IncSFM))
 - **Mimic Me Bot** — Human-to-robot mimicry with UR5 + inverse kinematics

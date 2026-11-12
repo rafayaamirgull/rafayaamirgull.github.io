@@ -467,6 +467,42 @@
             />
           </div>
           <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-info">
+                <h3>Efficient Fine-Tuning of Geospatial Foundation Models</h3>
+                <ul class="project-results">
+                  <li>
+                    Adapted Prithvi-EO-2.0-300M and DINOv2-Large in PyTorch
+                    using Low-Rank Adaptation (LoRA), then extended the team’s
+                    parameter-efficient fine-tuning (PEFT) experiments to
+                    Quantized LoRA (QLoRA).
+                  </li>
+                  <li>
+                    Evaluated downstream wildfire burn-scar semantic
+                    segmentation on multispectral satellite imagery using IoU
+                    and Dice/F1. Rank-16 LoRA matched full fine-tuning at
+                    <strong>0.88 Dice</strong> while using
+                    <strong>32% less peak GPU memory</strong>.
+                  </li>
+                  <li>
+                    Analyzed how training label availability affected EuroSAT
+                    land-cover classification. Prithvi with rank-16 LoRA reached
+                    <strong>96.6% validation accuracy</strong> using 10% of
+                    training labels, and rank-8 LoRA reached
+                    <strong>99.2%</strong> with all labels.
+                  </li>
+                </ul>
+                <div class="project-links">
+                  <a
+                    href="https://github.com/rafayaamirgull/Efficient-Adaptation-of-Foundation-Models-for-Environmental-Monitoring-Tasks/tree/master"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                    >View on GitHub <i class="fab fa-github" aria-hidden="true"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
             <div class="project-card">
               <div class="project-image project-visual"><i class="fas fa-robot" aria-hidden="true"></i><span>PyBullet · ROS 2 · UR5e</span></div>
               <div class="project-info">

@@ -856,6 +856,22 @@ body.light-mode .scroll-down-indicator {
   border-color: rgba(51, 209, 255, 0.35);
 }
 
+.project-results {
+  flex-grow: 1;
+  margin: 0 0 18px;
+  padding-left: 20px;
+  color: var(--steel-300);
+  list-style: disc;
+}
+
+.project-results li {
+  margin-bottom: 12px;
+}
+
+.project-results strong {
+  color: var(--steel-200);
+}
+
 .project-image {
   height: 220px;
   overflow: hidden;
